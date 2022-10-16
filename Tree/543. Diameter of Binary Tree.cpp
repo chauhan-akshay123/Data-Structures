@@ -18,3 +18,22 @@
         int d3 = diameterOfBinaryTree(root->right);
         return max(d1,max(d2,d3));
     }
+
+// APPROACH -2 (BEST)
+
+    int res=0;
+    int height(TreeNode* root){
+        if(root==NULL){
+          return 0;  
+        }
+        int lh = height(root->left);
+        int rh = height(root->right);
+        
+        res = max(res,lh+rh);
+        return 1+max(lh,rh);
+    }
+    
+    int diameterOfBinaryTree(TreeNode* root) {
+        int data = height(root);
+        return res;
+    }
